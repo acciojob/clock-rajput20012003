@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Clock Timer</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <p id="timer"></p>
 
+    <script>
+        // Function to update the timer
+        function updateTimer() {
+            const timerElement = document.getElementById('timer');
+            const now = new Date(); // Get current date and time
+
+            // Format the date and time
+            const dateTimeString = now.toLocaleString();
+
+            // Update the timer element content
+            timerElement.textContent = dateTimeString;
+        }
+
+        // Initial call to update the timer
+        updateTimer();
+
+        // Update the timer every second
+        setInterval(updateTimer, 1000);
+    </script>
 </body>
-
 </html>
